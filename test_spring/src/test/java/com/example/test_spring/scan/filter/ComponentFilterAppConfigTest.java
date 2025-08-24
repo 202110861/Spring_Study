@@ -28,7 +28,7 @@ public class ComponentFilterAppConfigTest {
 
     @Configuration
     @ComponentScan(
-            //type= FilterType.ANNOTATION 는 기본값이라 삭제해도 상관없음
+            //ANNOTATION 는 기본값이라 삭제해도 상관없음
             //ASSIGNABLE_TYPE : 지정한 타입과 자식 타입을 인식해서 동작
             //ASPECJT : AspectJ 패턴 사용
             // REGEX : 정규 표현식

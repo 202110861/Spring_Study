@@ -1,10 +1,16 @@
 package com.example.test_spring.discount;
 
+import com.example.test_spring.annotation.MainDiscountPolicy;
 import com.example.test_spring.member.Grade;
 import com.example.test_spring.member.Member;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+//@Qualifier("mainDiscountPolicy")
+@MainDiscountPolicy
+//@Primary  // 빈 이름이 같을 때 @Primary 붙은 빈 우선 찾음.
 public class RateDiscountPolicy implements DiscountPolicy{
     private int discountPercent = 10;
 
