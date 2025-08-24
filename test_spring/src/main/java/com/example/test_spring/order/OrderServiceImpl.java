@@ -1,5 +1,6 @@
 package com.example.test_spring.order;
 
+import com.example.test_spring.annotation.MainDiscountPolicy;
 import com.example.test_spring.discount.DiscountPolicy;
 import com.example.test_spring.member.Member;
 import com.example.test_spring.member.MemberRepository;
@@ -17,7 +18,7 @@ public class OrderServiceImpl implements OrderService{
 
     // @RequiredArgsConstructor 있으면 밑에 코드 없어도 됨.
     @Autowired //의존관계 자동 주입 방법 1 - 생성자 주입 (생성자가 하나만 있으면 @Autowired 생략 가능)
-    public OrderServiceImpl(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
+    public OrderServiceImpl(MemberRepository memberRepository,@MainDiscountPolicy DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
